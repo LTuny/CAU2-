@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Nguyễn Lan Tường",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -18.6, "left": 114.6, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -147.6,
+      "left": 109.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -92.05,
+      "left": 144,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -67.2, "left": 105, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -143.7, "left": 426.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "uno:13", "green", [ "v0", "h18" ] ],
+    [ "led1:C", "gnd1:GND", "green", [ "v0", "h-9.2" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v249.6", "h-163.2" ] ],
+    [ "dht1:SDA", "uno:7", "green", [ "v-9.6", "h-153.5" ] ],
+    [ "dht1:GND", "uno:GND.2", "black", [ "v230.4", "h-182.4" ] ]
+  ],
+  "dependencies": {}
+}
